@@ -11,7 +11,7 @@ Users-I want to
 -Talk to other users
 
 ## Wireframes
-Wireframe.png
+{Wireframe.png}
 
 ## Techs Used
 JSX React
