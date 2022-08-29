@@ -23,31 +23,31 @@ const Posts=()=>{
     },[id,changeCount])
 
     return (
-        <div >
+        <div className='h-3/5 overflow-auto'>
         {localStorage.getItem('id') ?
                 <AddPost 
                     id={id}
                     changeCount={changeCount}
                     setChangeCount={setChangeCount}
                 />
-            : <Link to="/" >Sign In to Leave a Review!</Link>
+                : <Link to="/" className='text-[#7ed957] font-bold'>Sign In to Leave a Post!</Link>
             }
             {postList.map((post) => (
-                <div key={post._id} >
-                    <h3 >{post.title}</h3>
-                    <p >{post.body}</p>
-                    {post.toString() === localStorage.getItem('id') ? 
-                        <div >
-                            <div className="del-review">
+                <div key={post._id} className='mb-10 p-5 border'>
+                    <h3 className='font-bold underline py-3'>{post.title}</h3>
+                    <p className='text-sm py-3'>{post.body}</p>
+                    {console.log(post.user)}
+                    {post.user.toString() === localStorage.getItem('id') ? 
+                        <div className='edit-delete flex flex-col'>
+                            <div className="del-post">
                                 <DeletePost 
-                                    foodTruckId={id}
                                     post={post}
                                     changeCount={changeCount}
                                     setChangeCount={setChangeCount}
                                 />
                             </div>
-                            <div className='edit-review'>
-                                <EditPost 
+                            <div className='edit-post'>
+                                <EditPost
                                     post ={post}
                                     changeCount={changeCount}
                                     setChangeCount={setChangeCount}

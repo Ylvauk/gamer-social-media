@@ -15,7 +15,7 @@ const EditPost = ({post, changeCount, setChangeCount}) => {
         setEditedPost({...editedPost, postId: id})
         axios({
             method: 'put',
-            url:`https://young-anchorage-22001.herokuapp.com/reviews/${id}`,
+            url:`https://glacial-forest-84300.herokuapp.com/posts/${id}`,
             data:editedPost,
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}` 

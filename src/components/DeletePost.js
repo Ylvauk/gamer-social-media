@@ -1,10 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 
-const DeletePost = ({postId, post, changeCount, setChangeCount}) => {
+const DeletePost = ({  post, changeCount, setChangeCount}) => {
     const handleDelete = (postId) => {
-        axios({method:'delete',
-            url:``,
+        axios({
+            method:'delete',
+            url:`https://glacial-forest-84300.herokuapp.com/posts/${postId}`,
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}` 
             }
@@ -20,6 +21,7 @@ const DeletePost = ({postId, post, changeCount, setChangeCount}) => {
         setCheckDelete(false)
     }
     return(
+        
         <div className="del-review">
             <button type="button" onClick={checkForDelete}>Delete Review</button>
             {checkDelete ? 
