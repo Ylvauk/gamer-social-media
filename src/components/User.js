@@ -9,7 +9,9 @@ const User = () => {
   const handleDelete = () => {
     axios({
       method: "delete",
-      url: `https://glacial-forest-84300.herokuapp.com/users/${localStorage.getItem('id')}`,
+      url: `https://glacial-forest-84300.herokuapp.com/users/${localStorage.getItem(
+        "id"
+      )}`,
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -50,7 +52,8 @@ const User = () => {
     if (email) data.email = email;
     axios({
       method: "put",
-      url: `https://glacial-forest-84300.herokuapp.com/users/${localStorage.getItem('id')}`,
+      url: `https://glacial-forest-84300.herokuapp.com/users/${localStorage.getItem("id")}`,
+      data:data,
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -60,10 +63,10 @@ const User = () => {
       }
     });
   };
-  const signOut=()=> {
-    localStorage.clear()
-    navigate('/')
-  }
+  const signOut = () => {
+    localStorage.clear();
+    navigate("/");
+  };
   return (
     <>
       <div>
@@ -74,18 +77,8 @@ const User = () => {
                 <p>Account Deleted</p>
               ) : (
                 <>
-                  <button
-                    onClick={signOut}
-
-                  >
-                    Sign Out
-                  </button>
-                  <button
-                    onClick={checkForUpdate}
-
-                  >
-                    Edit User Info
-                  </button>
+                  <button onClick={signOut}>Sign Out</button>
+                  <button onClick={checkForUpdate}>Edit User Info</button>
                   {checkUpdate ? (
                     <div>
                       {!updated ? (
@@ -127,11 +120,7 @@ const User = () => {
                                 required
                               />
                               <br></br>
-                              <label
-                                htmlFor="password"
-                              >
-                                Password:{" "}
-                              </label>
+                              <label htmlFor="password">Password: </label>
                               <input
                                 className="border"
                                 type="password"
