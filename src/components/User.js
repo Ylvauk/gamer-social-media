@@ -1,8 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import React from "react";
 
+import React from "react";
 const User = () => {
   let navigate = useNavigate();
 
@@ -69,7 +69,8 @@ const User = () => {
   };
   return (
     <>
-      <div>
+    <Link to="/main">Home</Link> 
+      <div className='flex flex-col justify-center items-center bg-slate-200 '>
         <div>
           {localStorage.getItem("id") ? (
             <>
@@ -77,17 +78,14 @@ const User = () => {
                 <p>Account Deleted</p>
               ) : (
                 <>
-                  <button onClick={signOut}>Sign Out</button>
-                  <button onClick={checkForUpdate}>Edit User Info</button>
+                  <button onClick={signOut} className='flex flex-col justify-center items-center mt-20'>Sign Out</button>
+                  <button onClick={checkForUpdate} className='flex flex-col justify-center items-center mt-20'>Edit User Info</button>
                   {checkUpdate ? (
                     <div>
                       {!updated ? (
                         <>
-                          <form className="w-3/4">
-                            <div className="flex flex-col">
-                              <p className="text-[#7ed957] text-xs italic mb-5">
-                                populate fields you would like to update
-                              </p>
+                          <form className='flex flex-col justify-center items-center'>
+                            <div className="flex flex-col ">
                               <label
                                 htmlFor="username"
                                 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -135,13 +133,13 @@ const User = () => {
                           <div>
                             <button
                               onClick={handleSubmit}
-                              className="flex-shrink-0 bg-[#7ed957] hover:bg-teal-700 text-sm  text-white py-1 px-2 rounded"
+                              className=" bg-[#ADD8E6] flex-shrink-0 text-sm  text-black py-1 px-2 rounded"
                             >
                               Submit
                             </button>
                             <button
                               onClick={exitUpdate}
-                              className="flex-shrink-0 bg-[#7ed957] hover:bg-teal-700 text-sm  text-white py-1 px-2 ml-5 rounded"
+                              className="bg-[#ADD8E6] flex-shrink-0 text-sm  text-black  py-1 px-2 ml-5 rounded"
                             >
                               Cancel
                             </button>
@@ -155,7 +153,7 @@ const User = () => {
                   <br></br>
                   <button
                     onClick={checkForDelete}
-                    className="font-bold border-b text-left w-3/4"
+                    className='flex flex-col justify-center items-center mt-20'
                   >
                     Delete User
                   </button>
@@ -183,7 +181,7 @@ const User = () => {
             </>
           ) : (
             <div className="flex flex-col justify-center items-center h-3/4 mt-20">
-              <h1 className="font-bold mb-5">Oops! You're not logged in.</h1>
+              <h1 className="font-bold mb-5">You're not logged in.</h1>
               <Link
                 to="/login"
                 className="bg-[#7ed957] shadow-lg flex-shrink-0 py-2 px-8 mb-5 border rounded-lg"

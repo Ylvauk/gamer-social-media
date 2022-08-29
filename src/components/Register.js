@@ -78,12 +78,12 @@ const Register = () => {
         }
     }
     return (
-        <div>
-            <div id="errorMessage" ref={errRef}>{errorMessage}</div>
-            <div>
-            <h1>Sign Up</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='username'>Username: </label>
+        <div className=' bg-slate-200 flex flex-col justify-center items-center p-0'>
+            <div id="errorMessage" ref={errRef} className='flex flex-col justify-center items-center'>{errorMessage}</div>
+            <div className='flex flex-col justify-center items-center'>
+            <h1 className='block uppercase tracking-wide text-gray-700 text-lg font-bold mt-4 mb-10'>Sign Up</h1>
+            <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center'>
+                <label htmlFor='username' className='font-bold'>Username: </label>
                 <input
                     className='border'
                     type='text'
@@ -96,12 +96,12 @@ const Register = () => {
                     onFocus={() => setUserFocus(true)}
                     onBlur={() => setUserFocus(false)}
                  />
-                <p>
+                <p className=' flex flex-col justify-center items-center'>
                             4 to 24 characters.<br />
                             Must begin with a letter.<br />
                             Only underscores and hyphens allowed.
                 </p>
-                <label htmlFor='email'>Email: </label>
+                <label htmlFor='email' className='font-bold'>Email: </label>
                 <input
                     className='border'
                     type='text'
@@ -111,7 +111,7 @@ const Register = () => {
                     value={email}
                     required
                 />
-                <label htmlFor='password'>Password: </label>
+                <label htmlFor='password' className='font-bold'>Password: </label>
                 <input
                     className='border'
                     type='password'
@@ -122,13 +122,13 @@ const Register = () => {
                     onFocus={() => setPasswordFocus(true)}
                     onBlur={() => setPasswordFocus(false)}
                 />
-                <p >
+                <p className='flex flex-col justify-center items-center'>
                             8 to 24 characters.<br />
                             Must include uppercase and lowercase letters, <br />
                             a number and a special character.<br />
                             Allowed special characters: ? ! @ # $ %
                 </p>
-                <label htmlFor="confirm_pwd">Confirm Password:</label>
+                <label htmlFor="confirm_pwd" className='font-bold'>Confirm Password:</label>
                 <input
                     className='border'
                     type="password"
@@ -139,23 +139,23 @@ const Register = () => {
                     onFocus={() => setMatchFocus(true)}
                     onBlur={() => setMatchFocus(false)}
                 />
-                <p > 
+                <p className='flex flex-col justify-center items-center'> 
                     Must match the first password input field.
                 </p>
 
-                <button>Sign Up</button>
+                <button className='flex flex-col justify-center items-center bg-[#ADD8E6] shadow-lg flex-shrink-0 py-1 px-5 mb-5 border rounded-lg'>Sign Up</button>
                 </form>
                 <Link to='/main'>continue as guest</Link>
         </div>
            {success &&
-                <div>
+                <div className='flex flex-col justify-center items-center'>
                     <p>Successfully Registered!</p>
                     <Link to="/">continue to sign in</Link>
                 </div>
             }
-            <div>
-                <h1>Returning User?</h1>
-                <Link to="/">Sign In</Link>
+            <div className=' flex flex-col justify-center items-center'>
+                <h1 >Returning User?</h1>
+                <Link to="/" className='font-bold underline'>Sign In</Link>
             </div>
         </div>
     );
