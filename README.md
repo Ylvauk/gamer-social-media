@@ -27,3 +27,6 @@ MainPage
 -Nav
 User Profile
 -Nav
+
+## Link
+https://630d52673174f048786e263a--merry-fairy-41238e.netlify.app/register
