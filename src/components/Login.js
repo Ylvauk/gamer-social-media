@@ -47,9 +47,9 @@ const Login = () => {
       {success ? (
         <>
           <div className='flex flex-col justify-evenly items-center w-3/4 md:w-1/4 h-1/2 mt-20 shadow-lg rounded-lg bg-white'>
-            <p>logged in successfully!</p>
+            <p>logged in</p>
             <p>
-              welcome <span>{user.username}!</span>
+              Welcome <span>{user.username}</span>
             </p>
             <Link to="/main">Enter</Link>
           </div>
